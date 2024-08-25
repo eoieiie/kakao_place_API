@@ -1,3 +1,4 @@
+<pre>
 lib/
 │
 ├── models/
@@ -14,6 +15,7 @@ lib/
 │   └── kakao_api.dart         // Kakao API 호출 로직을 담당하는 서비스
 │
 └── main.dart                  // 앱의 진입점
+</pre>
 
 
 1. models/place_model.dart
