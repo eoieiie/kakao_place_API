@@ -1,4 +1,4 @@
-package com.example.keywordapi
+package com.example.keyword_api
 
 import io.flutter.embedding.android.FlutterActivity
 
