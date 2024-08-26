@@ -4,9 +4,14 @@
 
 import '../models/place_model.dart'; // PlaceModel을 import하여 JSON 데이터를 모델 객체로 변환
 import '../services/kakao_api.dart'; // KakaoAPI 서비스를 import하여 API 호출을 수행
+//
+// import '../services/tourism_photo_api.dart';
 
 class PlaceViewModel {
   final KakaoAPI _kakaoAPI = KakaoAPI(); // KakaoAPI의 인스턴스를 생성하여 API 호출에 사용
+
+  // final TourismPhotoAPI _tourismPhotoAPI = TourismPhotoAPI();  // 새로운 API 서비스 인스턴스 생성
+  //
 
   // 사용자가 입력한 검색어를 바탕으로 장소를 검색하는 메서드
   Future<List<PlaceModel>> searchPlaces(String query) async {

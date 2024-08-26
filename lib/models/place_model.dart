@@ -11,6 +11,7 @@ class PlaceModel {
   final double x; // 장소의 경도(longitude)를 저장하는 변수
   final double y; // 장소의 위도(latitude)를 저장하는 변수
   final String distance; // 현재 위치와의 거리를 저장하는 변수
+  // final String? photoUrl;  // 새로운 필드 추가 근데 언제나 이미지를 가질 수 있는 게 아니라서 nullable로 함
 
   // 생성자: 각 필드를 필수(required)로 설정하고 초기화하는 생성자
   PlaceModel({
@@ -22,6 +23,7 @@ class PlaceModel {
     required this.x,
     required this.y,
     required this.distance,
+    // this.photoUrl,  // 초기화
   });
 
   // JSON 데이터를 PlaceModel 객체로 변환하는 역할을 함. 외부 API에서 받은 JSON 데이터를 활용하여 PlaceModel 인스턴스를 생성
@@ -38,6 +40,7 @@ class PlaceModel {
       x: double.parse(json['x']), // JSON에서 'x' 키의 값을 문자열로 받아와 double로 변환 후 x에 할당
       y: double.parse(json['y']), // JSON에서 'y' 키의 값을 문자열로 받아와 double로 변환 후 y에 할당
       distance: json['distance'], // JSON에서 'distance' 키의 값을 distance에 할당
+      // photoUrl: json['photo_url'],  // JSON에서 사진 URL 가져오기 (한국관광공사 API 데이터 사용)
     );
   }
 
@@ -56,6 +59,24 @@ class PlaceModel {
       'x': x.toString(), // x 값을 문자열로 변환하여 JSON의 'x' 키에 매핑
       'y': y.toString(), // y 값을 문자열로 변환하여 JSON의 'y' 키에 매핑
       'distance': distance, // distance 값을 JSON의 'distance' 키에 매핑
+      // 'photo_url': photoUrl,  // JSON으로 변환 시 포함
     };
   }
 }
+
+// // PlaceModel 클래스에 대한 확장(extension)을 추가
+// extension PlaceModelExtension on PlaceModel {
+//   PlaceModel copyWith({String? photoUrl}) {
+//     return PlaceModel(
+//       placeName: this.placeName,
+//       addressName: this.addressName,
+//       phone: this.phone,
+//       categoryGroupName: this.categoryGroupName,
+//       placeUrl: this.placeUrl,
+//       x: this.x,
+//       y: this.y,
+//       distance: this.distance,
+//       photoUrl: photoUrl ?? this.photoUrl,  // 기존의 photoUrl을 유지하거나 새로운 값을 사용
+//     );
+//   }
+// }

@@ -18,6 +18,23 @@ class PlaceDetailPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start, // 컨텐츠를 왼쪽 정렬
             children: [
+              // // 추가된 이미지 표시 위젯
+              // if (place.photoUrl != null && place.photoUrl!.isNotEmpty)
+              //   Image.network(
+              //     place.photoUrl!,
+              //     fit: BoxFit.cover,
+              //     width: double.infinity,
+              //     height: 200,
+              //   )
+              // else
+              //   Image.asset(
+              //     'assets/no_image_available.png', // 기본 이미지 경로
+              //     fit: BoxFit.cover,
+              //     width: double.infinity,
+              //     height: 200,
+              //   ),
+              // SizedBox(height: 10), // 위아래 공간 추가
+
               Text(
                 '장소 정보', // 섹션 제목
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold), // 텍스트 스타일 설정
@@ -47,7 +64,6 @@ class PlaceDetailPage extends StatelessWidget {
               SizedBox(height: 10), // 위아래 공간 추가
 
               Text('거리: ${place.distance}m', style: TextStyle(fontSize: 16)), // 거리 출력 (단위: 미터)
-
             ],
           ),
         ),
