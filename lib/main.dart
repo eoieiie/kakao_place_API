@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'views/search_page.dart';
 import 'views/tour_api_search_page.dart';
+import 'views/google_search_page.dart';
 
 void main() async {
   await dotenv.load(fileName: ".env");  // 환경 변수 로드
@@ -31,7 +32,8 @@ class _MainPageState extends State<MainPage> {
 
   static List<Widget> _pages = <Widget>[
     SearchPage(), // 기존 Kakao 검색 페이지
-    TourApiSearchPage(), // 새로 추가한 TourAPI 검색 페이지
+    TourApiSearchPage(), // TourAPI 검색 페이지
+    GoogleSearchPage(), // Google Places 검색 페이지
   ];
 
   void _onItemTapped(int index) {
@@ -67,6 +69,13 @@ class _MainPageState extends State<MainPage> {
               title: Text('TourAPI Search'),
               onTap: () {
                 _onItemTapped(1);
+                Navigator.pop(context); // 메뉴를 닫음
+              },
+            ),
+            ListTile(
+              title: Text('Google Place Search'),
+              onTap: () {
+                _onItemTapped(2);
                 Navigator.pop(context); // 메뉴를 닫음
               },
             ),
