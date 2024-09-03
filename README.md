@@ -15,6 +15,35 @@ lib/
 │   └── kakao_api.dart         // Kakao API 호출 로직을 담당하는 서비스
 │
 └── main.dart                  // 앱의 진입점
+
+최신 구조도
+
+E:\1.HANYANG\BUNNY\KEYWORD_API\LIB
+│   main.dart
+│
+├───models
+│       google_place_model.dart
+│       place_model.dart
+│       tour_api_photo_model.dart
+│
+├───services
+│       google_places_api.dart
+│       kakao_api.dart
+│       tourism_photo_api.dart
+│
+├───viewmodels
+│       google_place_view_model.dart
+│       place_view_model.dart
+│       tour_api_view_model.dart
+│
+└───views
+        full_screen_image_view.dart
+        google_place_detail_page.dart
+        google_search_page.dart
+        place_detail_page.dart
+        search_page.dart
+        tour_api_search_page.dart
+
 </pre>
 
 
